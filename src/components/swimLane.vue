@@ -61,10 +61,19 @@ export default {
       } else if (event.key === 'ArrowLeft') {
         this.showPreviousRow()
       }
+    },
+    handleClickOutside(event) {
+      if (!this.$refs.swimLane.contains(event.target)) {
+        this.$refs.swimLane.focus()
+      }
     }
   },
   mounted() {
     this.$refs.swimLane.focus()
+    document.addEventListener('click', this.handleClickOutside)
+  },
+  beforeUnmount() {
+    document.removeEventListener('click', this.handleClickOutside)
   }
 }
 </script>
