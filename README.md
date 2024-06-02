@@ -33,3 +33,9 @@ npm run build
 ```sh
 npm run lint
 ```
+
+### Deployed on Render
+
+```sh
+https://swimlane.onrender.com/
+```
